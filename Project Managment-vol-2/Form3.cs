@@ -13,20 +13,44 @@ namespace Project_Managment_vol_2
 {
     public partial class frmLog : Form
     {
-        public frmLog()
+
+        frmReg frm;
+
+        public frmLog(frmReg frmReg)
         {
             InitializeComponent();
+            this.frm = frmReg;
         }
+
+        public string role;
 
         private void bactolog_Click(object sender, EventArgs e)
         {
             new frmReg().Show();
-            this.Hide();
+            
         }
 
         private void log_Click(object sender, EventArgs e)
         {
+            foreach (User i in frm.Users)
+            {
+                if(i.Email == logemil.Text && i.Password == logpas.Text)
+                {
+                    role = i.Role;
+                }
+            }
 
+            if(role != null)
+            {
+                Main form = new Main(frm);
+                form.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid password or email, please try again", "Warning!");
+            }
         }
     }
 }

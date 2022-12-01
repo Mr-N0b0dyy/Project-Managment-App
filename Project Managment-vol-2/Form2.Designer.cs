@@ -163,7 +163,6 @@
             this.Name = "frmReg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.frmReg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

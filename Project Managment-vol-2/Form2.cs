@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,46 +8,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+
+using System.IO;
+using Project_Managment_vol_2;
 
 namespace Project_Managment_vol_2
-{
+{ 
     public partial class frmReg : Form
     {
-        
-        List<Admin> AdminList = new List<Admin>();
-        List<Employee> EmployeeList = new List<Employee>();
 
-        
         public frmReg()
         {
             InitializeComponent();
-
         }
+
+        List<User> users = new List<User>();
+
+        internal List<User> Users { get => users; set => users = value; }
 
         private void reg_Click(object sender, EventArgs e)
         {
-
             if (regkey.Text == "aziz")
             {
-                Admin admin = new Admin();
+                User user = new User();
 
-                admin.Email = regemil.Text;
-                admin.Password = regpas.Text;
+                user.Email = regemil.Text;
+                user.Password = regpas.Text;
+                user.Role = "Admin";
 
-                if (!AdminList.Contains(admin))
-                {
-                    AdminList.Add(admin);
-                    new frmLog().Show();
-                    this.Hide();
+                Users.Add(user);
 
-                }
-                else
-                {
-                    MessageBox.Show("User Allready Exits", "Warning!");
-                }
-
+                frmLog form = new frmLog(this);
+                form.Show();
+                this.Hide();
+                
             }
+
             else
             {
                 MessageBox.Show("Please Enter Key", "Warning!");
@@ -57,13 +54,12 @@ namespace Project_Managment_vol_2
 
         private void bactolog_Click(object sender, EventArgs e)
         {
-            new frmLog().Show();
+            frmLog form = new frmLog(this);
+            form.Show();
             this.Hide();
-        }
 
-        private void frmReg_Load(object sender, EventArgs e)
-        {
-           
         }
     }
+
+
 }
