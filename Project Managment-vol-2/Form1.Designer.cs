@@ -30,20 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Outclick = new DevExpress.XtraEditors.SimpleButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Empl = new DevExpress.XtraEditors.SimpleButton();
             this.ProTask = new DevExpress.XtraEditors.SimpleButton();
             this.Pro = new DevExpress.XtraEditors.SimpleButton();
             this.emptab = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.ListEmployees = new System.Windows.Forms.Button();
             this.Birth = new System.Windows.Forms.DateTimePicker();
             this.EmpDel = new System.Windows.Forms.Button();
             this.EmpUpt = new System.Windows.Forms.Button();
-            this.PicChoose = new System.Windows.Forms.Button();
             this.EmpSubmit = new System.Windows.Forms.Button();
             this.Pass = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.Emppic = new System.Windows.Forms.PictureBox();
             this.Email = new System.Windows.Forms.TextBox();
             this.Pnumber = new System.Windows.Forms.MaskedTextBox();
             this.Add2 = new System.Windows.Forms.TextBox();
@@ -104,6 +104,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.mileexp = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.CompCheck = new System.Windows.Forms.CheckBox();
             this.tasdel = new System.Windows.Forms.Button();
             this.tasup = new System.Windows.Forms.Button();
             this.tasub = new System.Windows.Forms.Button();
@@ -117,13 +118,13 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.emptab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Emppic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Empgrid)).BeginInit();
             this.protasktab.SuspendLayout();
             this.protab.SuspendLayout();
@@ -145,11 +146,28 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.panel1.Controls.Add(this.Outclick);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1605, 60);
+            this.panel1.Size = new System.Drawing.Size(1606, 60);
             this.panel1.TabIndex = 0;
+            // 
+            // Outclick
+            // 
+            this.Outclick.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(49)))), ((int)(((byte)(99)))));
+            this.Outclick.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.Outclick.Appearance.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Outclick.Appearance.Options.UseBackColor = true;
+            this.Outclick.Appearance.Options.UseBorderColor = true;
+            this.Outclick.Appearance.Options.UseFont = true;
+            this.Outclick.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Outclick.Location = new System.Drawing.Point(1445, 0);
+            this.Outclick.Name = "Outclick";
+            this.Outclick.Size = new System.Drawing.Size(160, 60);
+            this.Outclick.TabIndex = 50;
+            this.Outclick.Text = "Log Out";
+            this.Outclick.Click += new System.EventHandler(this.Outclick_Click);
             // 
             // panel2
             // 
@@ -215,7 +233,7 @@
             // 
             this.emptab.Controls.Add(this.splitContainer1);
             this.emptab.Name = "emptab";
-            this.emptab.Size = new System.Drawing.Size(1443, 820);
+            this.emptab.Size = new System.Drawing.Size(1444, 843);
             this.emptab.Text = "xtraTabPage3";
             // 
             // splitContainer1
@@ -228,14 +246,13 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
+            this.splitContainer1.Panel1.Controls.Add(this.ListEmployees);
             this.splitContainer1.Panel1.Controls.Add(this.Birth);
             this.splitContainer1.Panel1.Controls.Add(this.EmpDel);
             this.splitContainer1.Panel1.Controls.Add(this.EmpUpt);
-            this.splitContainer1.Panel1.Controls.Add(this.PicChoose);
             this.splitContainer1.Panel1.Controls.Add(this.EmpSubmit);
             this.splitContainer1.Panel1.Controls.Add(this.Pass);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
-            this.splitContainer1.Panel1.Controls.Add(this.Emppic);
             this.splitContainer1.Panel1.Controls.Add(this.Email);
             this.splitContainer1.Panel1.Controls.Add(this.Pnumber);
             this.splitContainer1.Panel1.Controls.Add(this.Add2);
@@ -259,9 +276,25 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.Empgrid);
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.splitContainer1.Size = new System.Drawing.Size(1443, 820);
-            this.splitContainer1.SplitterDistance = 411;
+            this.splitContainer1.Size = new System.Drawing.Size(1444, 843);
+            this.splitContainer1.SplitterDistance = 422;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // ListEmployees
+            // 
+            this.ListEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.ListEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListEmployees.FlatAppearance.BorderSize = 0;
+            this.ListEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ListEmployees.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListEmployees.ForeColor = System.Drawing.Color.White;
+            this.ListEmployees.Location = new System.Drawing.Point(1217, 200);
+            this.ListEmployees.Name = "ListEmployees";
+            this.ListEmployees.Size = new System.Drawing.Size(200, 32);
+            this.ListEmployees.TabIndex = 27;
+            this.ListEmployees.Text = "Display Phones";
+            this.ListEmployees.UseVisualStyleBackColor = false;
+            this.ListEmployees.Click += new System.EventHandler(this.ListEmployees_Click);
             // 
             // Birth
             // 
@@ -305,22 +338,6 @@
             this.EmpUpt.UseVisualStyleBackColor = false;
             this.EmpUpt.Click += new System.EventHandler(this.EmpUpt_Click);
             // 
-            // PicChoose
-            // 
-            this.PicChoose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.PicChoose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PicChoose.FlatAppearance.BorderSize = 0;
-            this.PicChoose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PicChoose.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PicChoose.ForeColor = System.Drawing.Color.White;
-            this.PicChoose.Location = new System.Drawing.Point(1213, 240);
-            this.PicChoose.Name = "PicChoose";
-            this.PicChoose.Size = new System.Drawing.Size(200, 32);
-            this.PicChoose.TabIndex = 23;
-            this.PicChoose.Text = "Choose";
-            this.PicChoose.UseVisualStyleBackColor = false;
-            this.PicChoose.Click += new System.EventHandler(this.PicChoose_Click);
-            // 
             // EmpSubmit
             // 
             this.EmpSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
@@ -354,14 +371,6 @@
             this.label10.Size = new System.Drawing.Size(71, 17);
             this.label10.TabIndex = 20;
             this.label10.Text = "Password :";
-            // 
-            // Emppic
-            // 
-            this.Emppic.Location = new System.Drawing.Point(1213, 25);
-            this.Emppic.Name = "Emppic";
-            this.Emppic.Size = new System.Drawing.Size(200, 200);
-            this.Emppic.TabIndex = 19;
-            this.Emppic.TabStop = false;
             // 
             // Email
             // 
@@ -530,7 +539,7 @@
             this.Empgrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Empgrid.Location = new System.Drawing.Point(0, 0);
             this.Empgrid.Name = "Empgrid";
-            this.Empgrid.Size = new System.Drawing.Size(1443, 405);
+            this.Empgrid.Size = new System.Drawing.Size(1444, 417);
             this.Empgrid.TabIndex = 0;
             this.Empgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Empgrid_CellContentClick);
             // 
@@ -538,7 +547,7 @@
             // 
             this.protasktab.Controls.Add(this.protree);
             this.protasktab.Name = "protasktab";
-            this.protasktab.Size = new System.Drawing.Size(1443, 820);
+            this.protasktab.Size = new System.Drawing.Size(1444, 843);
             this.protasktab.Text = "xtraTabPage2";
             // 
             // protree
@@ -550,7 +559,7 @@
             this.protree.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(49)))), ((int)(((byte)(99)))));
             this.protree.Location = new System.Drawing.Point(0, 0);
             this.protree.Name = "protree";
-            this.protree.Size = new System.Drawing.Size(1443, 820);
+            this.protree.Size = new System.Drawing.Size(1444, 843);
             this.protree.TabIndex = 0;
             this.protree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.protree_NodeMouseDoubleClick);
             // 
@@ -571,7 +580,7 @@
             this.protab.Appearance.PageClient.Options.UseBackColor = true;
             this.protab.Controls.Add(this.splitContainer2);
             this.protab.Name = "protab";
-            this.protab.Size = new System.Drawing.Size(1443, 820);
+            this.protab.Size = new System.Drawing.Size(1444, 843);
             this.protab.Text = "xtraTabPage1";
             // 
             // splitContainer2
@@ -609,8 +618,8 @@
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer2.Size = new System.Drawing.Size(1443, 820);
-            this.splitContainer2.SplitterDistance = 387;
+            this.splitContainer2.Size = new System.Drawing.Size(1444, 843);
+            this.splitContainer2.SplitterDistance = 405;
             this.splitContainer2.TabIndex = 0;
             // 
             // ProDel
@@ -787,7 +796,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1605, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1606, 0);
             // 
             // barDockControlBottom
             // 
@@ -795,7 +804,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 905);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1605, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1606, 0);
             // 
             // barDockControlLeft
             // 
@@ -809,7 +818,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1605, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1606, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 905);
             // 
@@ -916,6 +925,7 @@
             // 
             // splitContainer4.Panel2
             // 
+            this.splitContainer4.Panel2.Controls.Add(this.CompCheck);
             this.splitContainer4.Panel2.Controls.Add(this.tasdel);
             this.splitContainer4.Panel2.Controls.Add(this.tasup);
             this.splitContainer4.Panel2.Controls.Add(this.tasub);
@@ -924,7 +934,7 @@
             this.splitContainer4.Panel2.Controls.Add(this.taskexp);
             this.splitContainer4.Panel2.Controls.Add(this.label26);
             this.splitContainer4.Panel2.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.splitContainer4.Size = new System.Drawing.Size(1443, 429);
+            this.splitContainer4.Size = new System.Drawing.Size(1444, 434);
             this.splitContainer4.SplitterDistance = 663;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -1031,6 +1041,18 @@
             this.label20.TabIndex = 27;
             this.label20.Text = "Milestone Exp. :";
             // 
+            // CompCheck
+            // 
+            this.CompCheck.AutoSize = true;
+            this.CompCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.CompCheck.Location = new System.Drawing.Point(468, 44);
+            this.CompCheck.Name = "CompCheck";
+            this.CompCheck.Size = new System.Drawing.Size(91, 21);
+            this.CompCheck.TabIndex = 57;
+            this.CompCheck.Text = "Completed";
+            this.CompCheck.UseVisualStyleBackColor = true;
+            this.CompCheck.Visible = false;
+            // 
             // tasdel
             // 
             this.tasdel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
@@ -1046,6 +1068,7 @@
             this.tasdel.Text = "Delete";
             this.tasdel.UseVisualStyleBackColor = false;
             this.tasdel.Visible = false;
+            this.tasdel.Click += new System.EventHandler(this.tasdel_Click);
             // 
             // tasup
             // 
@@ -1062,6 +1085,7 @@
             this.tasup.Text = "Update";
             this.tasup.UseVisualStyleBackColor = false;
             this.tasup.Visible = false;
+            this.tasup.Click += new System.EventHandler(this.tasup_Click);
             // 
             // tasub
             // 
@@ -1121,10 +1145,12 @@
             // 
             this.peditdesc.Appearance.Options.UseBackColor = true;
             this.peditdesc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.peditdesc.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.peditdesc.Location = new System.Drawing.Point(160, 60);
             this.peditdesc.Name = "peditdesc";
             this.peditdesc.SelectedTabPage = this.protab;
-            this.peditdesc.Size = new System.Drawing.Size(1445, 845);
+            this.peditdesc.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
+            this.peditdesc.Size = new System.Drawing.Size(1446, 845);
             this.peditdesc.TabIndex = 2;
             this.peditdesc.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.protab,
@@ -1173,7 +1199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1605, 905);
+            this.ClientSize = new System.Drawing.Size(1606, 905);
             this.Controls.Add(this.peditdesc);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -1183,6 +1209,8 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Main";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.emptab.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -1190,7 +1218,6 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Emppic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Empgrid)).EndInit();
             this.protasktab.ResumeLayout(false);
             this.protab.ResumeLayout(false);
@@ -1246,11 +1273,9 @@
         private System.Windows.Forms.TextBox Add2;
         private System.Windows.Forms.TextBox Add1;
         private System.Windows.Forms.TextBox Email;
-        private System.Windows.Forms.PictureBox Emppic;
         private System.Windows.Forms.TextBox Pass;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button EmpSubmit;
-        private System.Windows.Forms.Button PicChoose;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button EmpUpt;
         private System.Windows.Forms.Button EmpDel;
@@ -1306,6 +1331,9 @@
         private System.Windows.Forms.Button tasdel;
         private System.Windows.Forms.Button tasup;
         private System.Windows.Forms.Button tasub;
+        private System.Windows.Forms.CheckBox CompCheck;
+        private DevExpress.XtraEditors.SimpleButton Outclick;
+        private System.Windows.Forms.Button ListEmployees;
     }
 }
 

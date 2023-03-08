@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bactolog = new System.Windows.Forms.Label();
+            this.bactoreg = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.log = new System.Windows.Forms.Button();
             this.logpas = new System.Windows.Forms.TextBox();
@@ -38,16 +38,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // bactolog
+            // bactoreg
             // 
-            this.bactolog.AutoSize = true;
-            this.bactolog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.bactolog.Location = new System.Drawing.Point(30, 350);
-            this.bactolog.Name = "bactolog";
-            this.bactolog.Size = new System.Drawing.Size(120, 17);
-            this.bactolog.TabIndex = 19;
-            this.bactolog.Text = "Create an Account";
-            this.bactolog.Click += new System.EventHandler(this.bactolog_Click);
+            this.bactoreg.AutoSize = true;
+            this.bactoreg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.bactoreg.Location = new System.Drawing.Point(30, 350);
+            this.bactoreg.Name = "bactoreg";
+            this.bactoreg.Size = new System.Drawing.Size(120, 17);
+            this.bactoreg.TabIndex = 19;
+            this.bactoreg.Text = "Create an Account";
+            this.bactoreg.Click += new System.EventHandler(this.bactolog_Click);
             // 
             // label5
             // 
@@ -126,7 +126,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(285, 455);
-            this.Controls.Add(this.bactolog);
+            this.Controls.Add(this.bactoreg);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.log);
             this.Controls.Add(this.logpas);
@@ -148,7 +148,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label bactolog;
+        private System.Windows.Forms.Label bactoreg;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button log;
         private System.Windows.Forms.TextBox logpas;

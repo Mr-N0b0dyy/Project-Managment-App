@@ -11,33 +11,45 @@ using System.Windows.Forms;
 
 using System.IO;
 using Project_Managment_vol_2;
+using Project_Managment_vol_2.Contexts;
 
 namespace Project_Managment_vol_2
 { 
     public partial class frmReg : Form
     {
-
+        
         public frmReg()
         {
+            
             InitializeComponent();
+
         }
 
-        List<User> users = new List<User>();
+        frmLog form = null;
 
-        internal List<User> Users { get => users; set => users = value; }
+        public Boolean firstTime = false;
+
+        
+
+        
 
         private void reg_Click(object sender, EventArgs e)
         {
-            if (regkey.Text == "aziz")
+            if (regkey.Text == "IamAdmin")
             {
-                User user = new User();
+                User FindUser = Program.Codefirst.Users.FirstOrDefault(x => x.UserId == "0");
+                if (FindUser != null)
+                {
+                    User temp = new User(null,null,null);
+                
+                    temp.Counter = FindUser.Counter-1;
+                }
+                User user = new User("Admin", regemil.Text, regpas.Text);
+                
 
-                user.Email = regemil.Text;
-                user.Password = regpas.Text;
-                user.Role = "Admin";
-
-                Users.Add(user);
-
+                
+                Program.Codefirst.Users.Add(user);
+                Program.Codefirst.SaveChanges();
                 frmLog form = new frmLog(this);
                 form.Show();
                 this.Hide();
@@ -54,9 +66,14 @@ namespace Project_Managment_vol_2
 
         private void bactolog_Click(object sender, EventArgs e)
         {
-            frmLog form = new frmLog(this);
+            
+            form = new frmLog(this);
             form.Show();
             this.Hide();
+                
+
+            
+            
 
         }
     }
